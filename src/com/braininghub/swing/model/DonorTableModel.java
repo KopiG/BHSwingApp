@@ -7,10 +7,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by kopig on 2019. 03. 26..
+ * Base Model class to hold Donors
+ * Created by kopig on 2019. 03. 26.
  */
 public class DonorTableModel extends AbstractTableModel {
-    List<Donor> donors;
+    private List<Donor> donors;
 
     @Override
     public String getColumnName(int column) {
@@ -22,11 +23,11 @@ public class DonorTableModel extends AbstractTableModel {
         return columnClasses[columnIndex];
     }
 
-    protected String[] columnNames = new String[] {
+    private String[] columnNames = new String[] {
             "First Name", "Last Name", "All Donations", "Last Donation"
     };
 
-    protected Class[] columnClasses = new Class[] {
+    private Class[] columnClasses = new Class[] {
             String.class, String.class, Integer.class, Date.class
     };
 
