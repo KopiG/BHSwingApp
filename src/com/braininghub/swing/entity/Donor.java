@@ -1,4 +1,4 @@
-package com.braininghub.swing;
+package com.braininghub.swing.entity;
 
 import java.util.Date;
 

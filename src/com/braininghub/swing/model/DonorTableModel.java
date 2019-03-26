@@ -1,9 +1,10 @@
-package com.braininghub.swing;
+package com.braininghub.swing.model;
+
+import com.braininghub.swing.entity.Donor;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by kopig on 2019. 03. 26..
