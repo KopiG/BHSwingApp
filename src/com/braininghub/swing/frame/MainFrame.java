@@ -1,18 +1,14 @@
 package com.braininghub.swing.frame;
 
-import com.braininghub.swing.entity.Donor;
 import com.braininghub.swing.model.DonorTableModel;
 import com.braininghub.swing.service.DonorService;
 import com.braininghub.swing.table.DonorTable;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.WindowConstants;
 import java.awt.HeadlessException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+
 
 /**
  * Created on 2019. márc. 27.

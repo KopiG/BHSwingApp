@@ -5,7 +5,6 @@ import com.braininghub.swing.entity.Donor;
 import javax.swing.table.AbstractTableModel;
 import java.awt.Color;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,7 +12,7 @@ import java.util.List;
  * Created by kopig on 2019. 03. 26.
  */
 public class DonorTableModel extends AbstractTableModel {
-    private List<Donor> donors;
+    private final List<Donor> donors;
 
     @Override
     public String getColumnName(int column) {
@@ -25,12 +24,12 @@ public class DonorTableModel extends AbstractTableModel {
         return columnClasses[columnIndex];
     }
 
-    private String[] columnNames = new String[] {
-            "First Name", "Last Name", "All Donations", "Last Donation"
+    private final String[] columnNames = new String[] {
+        "First Name", "Last Name", "All Donations", "Last Donation"
     };
 
-    private Class[] columnClasses = new Class[] {
-            String.class, String.class, Integer.class, LocalDate.class
+    private final Class[] columnClasses = new Class[] {
+        String.class, String.class, Integer.class, LocalDate.class
     };
 
     @Override
@@ -45,12 +44,17 @@ public class DonorTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        switch (columnIndex){
-            case 0 : return donors.get(rowIndex).getFirstName();
-            case 1 : return donors.get(rowIndex).getLastName();
-            case 2 : return donors.get(rowIndex).getAllDonations();
-            case 3 : return donors.get(rowIndex).getLastDonation();
-            default: return null;
+        switch (columnIndex) {
+            case 0:
+                return donors.get(rowIndex).getFirstName();
+            case 1:
+                return donors.get(rowIndex).getLastName();
+            case 2:
+                return donors.get(rowIndex).getAllDonations();
+            case 3:
+                return donors.get(rowIndex).getLastDonation();
+            default:
+                return null;
         }
     }
 
@@ -60,10 +64,11 @@ public class DonorTableModel extends AbstractTableModel {
 
     public Color getBackgroundColor(int rowNumber) {
         LocalDate lastDonation = (LocalDate) getValueAt(rowNumber, 3);
-        if (LocalDate.now().isAfter(lastDonation.plusDays(56)))
+        if (LocalDate.now().isAfter(lastDonation.plusDays(56))) {
             return Color.GREEN;
-
-        else return Color.RED;
+        } else {
+            return Color.RED;
+        }
     }
 
 }
