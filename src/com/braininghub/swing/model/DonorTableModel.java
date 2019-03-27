@@ -3,6 +3,7 @@ package com.braininghub.swing.model;
 import com.braininghub.swing.entity.Donor;
 
 import javax.swing.table.AbstractTableModel;
+import java.awt.Color;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -56,4 +57,13 @@ public class DonorTableModel extends AbstractTableModel {
     public DonorTableModel(List<Donor> donors) {
         this.donors = donors;
     }
+
+    public Color getBackgroundColor(int rowNumber) {
+        LocalDate lastDonation = (LocalDate) getValueAt(rowNumber, 3);
+        if (LocalDate.now().isAfter(lastDonation.plusDays(56)))
+            return Color.GREEN;
+
+        else return Color.RED;
+    }
+
 }

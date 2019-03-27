@@ -3,6 +3,7 @@ package com.braininghub.swing.frame;
 import com.braininghub.swing.entity.Donor;
 import com.braininghub.swing.model.DonorTableModel;
 import com.braininghub.swing.service.DonorService;
+import com.braininghub.swing.table.DonorTable;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -21,9 +22,7 @@ import java.util.List;
 public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         DonorTableModel donorTableModel = new DonorTableModel(DonorService.getDonors());
-        JTable donorTable = new JTable(donorTableModel);
-        donorTable.setAutoCreateRowSorter(true);
-        JScrollPane jScrollPane = new JScrollPane(donorTable);
+        JScrollPane jScrollPane = new JScrollPane(new DonorTable(donorTableModel));
         JFrame frame = new JFrame("App");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);

@@ -16,7 +16,7 @@ public class DonorService {
     public static List<Donor> getDonors() {
         List<Donor> donors = new ArrayList<>();
         LocalDate localDate = LocalDate.of(2018, Month.DECEMBER, 3);
-        LocalDate localDate2 = LocalDate.of(2019, Month.FEBRUARY, 11);
+        LocalDate localDate2 = LocalDate.of(2019, Month.MARCH, 11);
         Donor donor1 = new Donor("Peter", "Miska", 3, localDate);
         Donor donor2 = new Donor("Gabor", "Alfoldi", 1, localDate2);
 
