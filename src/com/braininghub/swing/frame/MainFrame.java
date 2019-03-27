@@ -22,6 +22,7 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         DonorTableModel donorTableModel = new DonorTableModel(DonorService.getDonors());
         JTable donorTable = new JTable(donorTableModel);
+        donorTable.setAutoCreateRowSorter(true);
         JScrollPane jScrollPane = new JScrollPane(donorTable);
         JFrame frame = new JFrame("App");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

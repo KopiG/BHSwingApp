@@ -1,12 +1,12 @@
 package com.braininghub.swing.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Donor {
     private String firstName;
     private String lastName;
     private Integer allDonations;
-    private Date lastDonation;
+    private LocalDate lastDonation;
 
     public String getFirstName() {
         return firstName;
@@ -32,15 +32,15 @@ public class Donor {
         this.allDonations = allDonations;
     }
 
-    public Date getLastDonation() {
+    public LocalDate getLastDonation() {
         return lastDonation;
     }
 
-    public void setLastDonation(Date lastDonation) {
+    public void setLastDonation(LocalDate lastDonation) {
         this.lastDonation = lastDonation;
     }
 
-    public Donor(String firstName, String lastName, Integer allDonations, Date lastDonation) {
+    public Donor(String firstName, String lastName, Integer allDonations, LocalDate lastDonation) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.allDonations = allDonations;

@@ -3,6 +3,7 @@ package com.braininghub.swing.model;
 import com.braininghub.swing.entity.Donor;
 
 import javax.swing.table.AbstractTableModel;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class DonorTableModel extends AbstractTableModel {
     };
 
     private Class[] columnClasses = new Class[] {
-            String.class, String.class, Integer.class, Date.class
+            String.class, String.class, Integer.class, LocalDate.class
     };
 
     @Override
